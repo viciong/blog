@@ -1,1 +1,2 @@
-.gitignore
+*.gitignore
+*.sqlite3
