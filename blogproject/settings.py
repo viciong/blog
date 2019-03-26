@@ -25,8 +25,7 @@ SECRET_KEY = '#qq-fudea#fh2#qz9%+8z4vey$t7cdmf*hbou4l+wpbg^2ghmv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.47.101.197.4']
-
+ALLOWED_HOSTS = ['127.0.0.1','localhost','.eternalwu.com']
 
 # Application definition
 
