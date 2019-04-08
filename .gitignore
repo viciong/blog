@@ -1,1 +1,4 @@
 *.sqlite3
+.idea
+__pycache__
+fabfile.py
