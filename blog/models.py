@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
+import markdown
+from django.utils.html import strip_tags
 
 # python_2_unicode_compatible 装饰器用于兼容 Python2
 @python_2_unicode_compatible#模型增加_str_方法为shell显示明确查询数据
@@ -41,19 +42,14 @@ class Post(models.Model):
     #文章标题
     title=models.CharField(max_length=70)
 
-    #文章正文，我们使用了textfield
-    #存储比较短的字符串可以使用charfield,但对于文章的正文来说可能回事一大段文本，
-    # 因此使用TextField类型。
+    #存储比较短的字符串可以使用charfield,但对于文章的正文来说可能回事一大段文本，因此使用TextField类型。
     body=models.TextField()
-
 
     # 这两个列分别表示文章的创建时间和最后一次修改时间，存储时间的字段用 DateTimeField 类型
     created_time=models.DateTimeField()
-
     modified_time=models.DateTimeField()
 
-    # 文章摘要，可以没有文章摘要，但默认情况下 CharField 要求我们必须存入数据，否则就会报错。
-    # 指定 CharField 的 blank=True 参数值后就可以允许空值了。
+    # 文章摘要，可以没有文章摘要，但默认情况下 CharField 要求我们必须存入数据，否则就会报错。指定 CharField 的 blank=True 参数值后就可以允许空值了。
     excerpt=models.CharField(max_length=200,blank=True)
 
     # 这是分类与标签，分类与标签的模型我们已经定义在上面。
@@ -88,6 +84,18 @@ class Post(models.Model):
         self.views += 1
         self.save(update_fields=['views'])
 
-
     class Meta:
         ordering=['-created_time']#定义排序，可删除其他重复的模块排序
+
+    #自动填充摘要
+    def save(self, *args, **kwargs):
+        #如果没有手动填写
+        if not self.excerpt:
+            #markdown  body的文本
+            md=markdown.Markdown(extensions=[
+                'markdown.extensions.extra',
+                'markdown.extensions.codehilite',
+            ])
+            #md(body)后，去掉HTML标签并提取前54个字符
+            self.excerpt = strip_tags(md.convert(self.body))[:54]
+        super(Post, self).save(*args, **kwargs)
