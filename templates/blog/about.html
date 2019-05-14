@@ -41,7 +41,7 @@
                         </button>
                     </div>
 
-                    <div style="margin-top: 1px" class="collapse navbar-collapse">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href="{% url "blog:index" %}" data-hover="首页">首页</a></li>
                             <li class="cl-effect-11"><a href="{% url "blog:about" %}" data-hover="关于">关于</a></li>
@@ -62,18 +62,7 @@
     </header>
 
 
-    <!-- Mobile Menu -->
-    <div class="overlay overlay-hugeinc">
-        <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-        <nav>
-            <ul>
-                <li><a href="{% url "blog:index" %}">首页</a></li>
-                <li><a href="about.html">关于</a></li>
-            </ul>
-        </nav>
-    </div>
 
-    <script src="{% static 'blog/js/script.js' %}"></script>
     <h4 class="text-center">随手小写</h4>
     <div style="width:90% " class="center-block">
         <p><br/><br/>
@@ -86,16 +75,28 @@
 
 
         </p></div>
-    <footer id="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="http://www.miitbeian.gov.cn" target="_blank"><p class="copyright">&copy 2019
-                        鄂ICP备19006836号-1</a>
-                    </p>
-                </div>
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="http://www.miitbeian.gov.cn" target="_blank"><p class="copyright">&copy 2019
+                    鄂ICP备19006836号-1</a>
+                </p>
             </div>
         </div>
-    </footer>
-    <body>
+    </div>
+</footer>
+   <!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="{% url "blog:index" %}">首页</a></li>
+            <li><a href="{% url "blog:about" %}">关于</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="{% static 'blog/js/script.js' %}"></script>
+</body>
 </html>
