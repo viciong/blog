@@ -12,7 +12,7 @@ cffi==1.11.5
 chardet==3.0.4
 Click==7.0
 crypto==1.4.1
-cryptography==2.4.2
+cryptography==3.2
 Django==2.1.4
 django-crontab==0.7.1
 django-haystack==2.8.1
