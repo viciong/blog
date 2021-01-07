@@ -29,7 +29,7 @@ get==2018.11.19
 idna==2.7
 jieba==0.39
 Jinja2==2.10
-lxml==4.2.5
+lxml==4.6.2
 macholib==1.11
 Markdown==3.0.1
 MarkupSafe==1.1.0
