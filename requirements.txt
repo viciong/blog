@@ -28,7 +28,7 @@ future==0.17.1
 get==2018.11.19
 idna==2.7
 jieba==0.39
-Jinja2==2.10
+Jinja2==2.11.3
 lxml==4.2.5
 macholib==1.11
 Markdown==3.0.1
