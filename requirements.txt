@@ -60,7 +60,7 @@ pyodbc==4.0.26
 python-tds==1.9.1
 pythreading==0.4
 pytz==2018.7
-PyYAML==3.13
+PyYAML==5.4
 query-string==2018.11.20
 range==1.0.0
 request==2018.11.20
