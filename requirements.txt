@@ -50,7 +50,7 @@ pyasn1==0.4.5
 pybase64==0.4.0
 pycparser==2.19
 pycryptodome==3.7.2
-Pygments==2.3.1
+Pygments==2.7.4
 PyInstaller==3.4
 pyjieba==1.0
 PyMySQL==0.9.2
