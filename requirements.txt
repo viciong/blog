@@ -42,7 +42,7 @@ numpy==1.16.2
 opencv-python==4.0.0.21
 paramiko==2.4.2
 pefile==2018.8.8
-Pillow==5.3.0
+Pillow==9.0.1
 post==2018.11.20
 prettytable==0.7.2
 public==2018.11.20
